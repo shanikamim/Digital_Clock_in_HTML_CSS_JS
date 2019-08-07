@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html;" />
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Digital Clock</title>
+</head>
+<style type="text/css">
+body{background-image:url("cat.jpg");
+color:white;
+}
+#s {background-color:red;
+float:right;
+padding:35px 40px;
+font-size:50px;
+border-radius:100px;
+box-shadow:0px 5px 39px black;
+margin-right:6px;
+
+}
+#t{background-color:teal;
+padding:20px 5px;
+font-size:50px;
+}
+#dbb{background-color:teal;
+padding:10px 5px;
+font-size:20px;
+border-top:5px solid black;
+}
+h3:hover {
+background-color: #555;
+color: white;
+}
+
+h1 {font-weight:lighter;}
+h3 {float:right;}
+</style>
+<body>
+
+<h1>MyDigitalClock</h1><br>
+
+<div id="s" ></div><br>
+<div id="t" ></div>
+
+<div id="dbb" ></div>
+<br><br><br><br><br><br>
+<h3>@yuven</h3>
+<script type="text/javascript">
+
+setInterval(function(){
+
+var d=new Date();
+
+var s=d.getSeconds();
+
+var m=d.getMinutes();
+
+var h=d.getHours();
+
+var v=d.getDay();
+var mois=d.getMonth();
+var day=["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+var jour=day[v-1];
+
+if(mois<10){mois="0"+mois;}
+if(s<10){s="0"+s;}
+
+if (h<10){ h="0"+h;}
+
+if (m<10){ m="0"+m;}
+
+document.getElementById("s").innerHTML=s;
+
+document.getElementById("t").innerHTML=h+":"+m;
+document.getElementById("dbb").innerHTML=jour+" "+d.getDay()+"/"+mois+"/"+2019;
+
+},1000);
+
+</script>
+
+</body>
+</html>
